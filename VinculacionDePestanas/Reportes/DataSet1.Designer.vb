@@ -2810,6 +2810,13 @@ Namespace DataSet1TableAdapters
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OBSERSTA", Global.System.Data.SqlDbType.VarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.VarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INTER", Global.System.Data.SqlDbType.VarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DETAJU", Global.System.Data.SqlDbType.VarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DETMAN", Global.System.Data.SqlDbType.VarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DETEVA", Global.System.Data.SqlDbType.VarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DETINT", Global.System.Data.SqlDbType.VarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DETCUR", Global.System.Data.SqlDbType.VarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DETIDI", Global.System.Data.SqlDbType.VarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DETCAL", Global.System.Data.SqlDbType.VarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2867,7 +2874,14 @@ Namespace DataSet1TableAdapters
                     ByVal STATUS As String,  _
                     ByVal OBSERSTA As String,  _
                     ByVal ID As String,  _
-                    ByVal INTER As String) As Integer
+                    ByVal INTER As String,  _
+                    ByVal DETAJU As String,  _
+                    ByVal DETMAN As String,  _
+                    ByVal DETEVA As String,  _
+                    ByVal DETINT As String,  _
+                    ByVal DETCUR As String,  _
+                    ByVal DETIDI As String,  _
+                    ByVal DETCAL As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (FOLIO Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
@@ -3118,6 +3132,41 @@ Namespace DataSet1TableAdapters
                 Me.Adapter.SelectCommand.Parameters(50).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(50).Value = CType(INTER,String)
+            End If
+            If (DETAJU Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(51).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(51).Value = CType(DETAJU,String)
+            End If
+            If (DETMAN Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(52).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(52).Value = CType(DETMAN,String)
+            End If
+            If (DETEVA Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(53).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(53).Value = CType(DETEVA,String)
+            End If
+            If (DETINT Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(54).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(54).Value = CType(DETINT,String)
+            End If
+            If (DETCUR Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(55).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(55).Value = CType(DETCUR,String)
+            End If
+            If (DETIDI Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(56).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(56).Value = CType(DETIDI,String)
+            End If
+            If (DETCAL Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(57).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(57).Value = CType(DETCAL,String)
             End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -3180,7 +3229,14 @@ Namespace DataSet1TableAdapters
                     ByVal STATUS As String,  _
                     ByVal OBSERSTA As String,  _
                     ByVal ID As String,  _
-                    ByVal INTER As String) As DataSet1.InformeDataTable
+                    ByVal INTER As String,  _
+                    ByVal DETAJU As String,  _
+                    ByVal DETMAN As String,  _
+                    ByVal DETEVA As String,  _
+                    ByVal DETINT As String,  _
+                    ByVal DETCUR As String,  _
+                    ByVal DETIDI As String,  _
+                    ByVal DETCAL As String) As DataSet1.InformeDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (FOLIO Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
@@ -3431,6 +3487,41 @@ Namespace DataSet1TableAdapters
                 Me.Adapter.SelectCommand.Parameters(50).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(50).Value = CType(INTER,String)
+            End If
+            If (DETAJU Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(51).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(51).Value = CType(DETAJU,String)
+            End If
+            If (DETMAN Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(52).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(52).Value = CType(DETMAN,String)
+            End If
+            If (DETEVA Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(53).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(53).Value = CType(DETEVA,String)
+            End If
+            If (DETINT Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(54).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(54).Value = CType(DETINT,String)
+            End If
+            If (DETCUR Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(55).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(55).Value = CType(DETCUR,String)
+            End If
+            If (DETIDI Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(56).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(56).Value = CType(DETIDI,String)
+            End If
+            If (DETCAL Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(57).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(57).Value = CType(DETCAL,String)
             End If
             Dim dataTable As DataSet1.InformeDataTable = New DataSet1.InformeDataTable()
             Me.Adapter.Fill(dataTable)

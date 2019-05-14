@@ -26,7 +26,14 @@ Public Class ImprmirInforme
         Dim fol, cveContCons As Integer
         Dim tipo, emp, serv, elaboroCot, ajuste, mantto, com, inter, curva, idioma, calen, vad, pun, obser,
          empemi, dir, cd, edo, cp, pais, email, user, marca, modelo, serie, nfun,
-        pa1, pa2, pa3, pa4, pa5, pa6, pa7, pa8, pa9, pa10, status, obsersta, tel, ID, alcance, a As String
+        pa1, pa2, pa3, pa4, pa5, pa6, pa7, pa8, pa9, pa10, status, obsersta, tel, ID, alcance As String
+        Dim a As String = " "
+        Dim b As String = " "
+        Dim c As String = " "
+        Dim d As String = " "
+        Dim f As String = " "
+        Dim g As String = " "
+        Dim h As String = " "
         Dim frecep, freg, frecal, femi, freceplab As Date
         If ((lector2019(0) Is DBNull.Value) OrElse (lector2019(0) Is Nothing)) Then
             fol = "-"
@@ -89,13 +96,15 @@ Public Class ImprmirInforme
             Select Case ajuste
                 Case 1
                     ajuste = "Sin ajuste"
-                    a = "SI FUNCIONA"
                 Case 2
                     ajuste = "Ajuste 50%"
+                    a = "(AMR03)"
                 Case 3
                     ajuste = "Ajuste 100%"
+                    a = "(AMR04)"
                 Case Else
                     ajuste = "Pintado, despintado, rotulado y ajuste de pesa paralelepípeda"
+                    a = "(AMR55)"
             End Select
         End If
         If ((lector2019(7) Is DBNull.Value) OrElse (lector2019(7) Is Nothing)) Then
@@ -107,6 +116,7 @@ Public Class ImprmirInforme
                     mantto = "Sin mantenimiento"
                 Case 6
                     mantto = "Mantenimiento preventivo"
+                    b = "(AMR07)"
             End Select
         End If
         If ((lector2019(8) Is DBNull.Value) OrElse (lector2019(8) Is Nothing)) Then
@@ -118,8 +128,10 @@ Public Class ImprmirInforme
                     com = "Sin evaluación de la conformidad"
                 Case 11
                     com = "Con evaluación de la conformidad de los resultados finales, incluyendo incertidumbres"
+                    c = "(COM02)"
                 Case 12
                     com = "Con evaluación de la conformidad Eléctrica"
+                    c = "(COM02E)"
             End Select
         End If
         If ((lector2019(9) Is DBNull.Value) OrElse (lector2019(9) Is Nothing)) Then
@@ -131,6 +143,7 @@ Public Class ImprmirInforme
                     inter = "Sin calculo de intervalo de caibración"
                 Case 14
                     inter = "Calculo de intervalo de calibración"
+                    d = "(COM03B)"
             End Select
         End If
         If ((lector2019(10) Is DBNull.Value) OrElse (lector2019(10) Is Nothing)) Then
@@ -142,8 +155,10 @@ Public Class ImprmirInforme
                     curva = "Sin curva de ajuste"
                 Case 16
                     curva = "Curva de ajuste con residuales y evaluación de incertidumbre"
+                    f = "(COM01)"
                 Case 17
                     curva = "Curva de ajuste Eléctrica"
+                    f = "(COM01E)"
             End Select
         End If
         If ((lector2019(11) Is DBNull.Value) OrElse (lector2019(11) Is Nothing)) Then
@@ -155,8 +170,10 @@ Public Class ImprmirInforme
                     idioma = "Español"
                 Case 19
                     idioma = "Portada bilingüe español + inglés"
+                    g = "(COM05)"
                 Case 20
                     idioma = "Certificado completo bilingüe español + inglés"
+                    g = "(COM05B)"
             End Select
         End If
         If ((lector2019(12) Is DBNull.Value) OrElse (lector2019(12) Is Nothing)) Then
@@ -168,8 +185,10 @@ Public Class ImprmirInforme
                     calen = "Normal"
                 Case 22
                     calen = "Programado"
+                    h = "(LAB05)"
                 Case 23
                     calen = "Urgente"
+                    h = "(LAB01)"
             End Select
         End If
         If ((lector2019(13) Is DBNull.Value) OrElse (lector2019(13) Is Nothing)) Then
@@ -403,7 +422,13 @@ Public Class ImprmirInforme
         Dim param47 = New SqlParameter("@OBSERSTA", SqlDbType.VarChar)
         Dim param48 = New SqlParameter("@ID", SqlDbType.VarChar)
         Dim param49 = New SqlParameter("@INTER", SqlDbType.VarChar)
-        Dim param50 = New SqlParameter("@a", SqlDbType.VarChar)
+        Dim param50 = New SqlParameter("@DETAJU", SqlDbType.VarChar)
+        Dim param51 = New SqlParameter("@DETMAN", SqlDbType.VarChar)
+        Dim param52 = New SqlParameter("@DETEVA", SqlDbType.VarChar)
+        Dim param53 = New SqlParameter("@DETINT", SqlDbType.VarChar)
+        Dim param54 = New SqlParameter("@DETCUR", SqlDbType.VarChar)
+        Dim param55 = New SqlParameter("@DETIDI", SqlDbType.VarChar)
+        Dim param56 = New SqlParameter("@DETCAL", SqlDbType.VarChar)
         param0.Direction = ParameterDirection.Input
         param1.Direction = ParameterDirection.Input
         param2.Direction = ParameterDirection.Input
@@ -455,6 +480,12 @@ Public Class ImprmirInforme
         param48.Direction = ParameterDirection.Input
         param49.Direction = ParameterDirection.Input
         param50.Direction = ParameterDirection.Input
+        param51.Direction = ParameterDirection.Input
+        param52.Direction = ParameterDirection.Input
+        param53.Direction = ParameterDirection.Input
+        param54.Direction = ParameterDirection.Input
+        param55.Direction = ParameterDirection.Input
+        param56.Direction = ParameterDirection.Input
         param0.Value = fol
         param1.Value = MAG
         param2.Value = INF
@@ -506,6 +537,12 @@ Public Class ImprmirInforme
         param48.Value = ID
         param49.Value = alcance
         param50.Value = a
+        param51.Value = b
+        param52.Value = c
+        param53.Value = d
+        param54.Value = f
+        param55.Value = g
+        param56.Value = h
         Adaptador.SelectCommand.Parameters.Add(param0)
         Adaptador.SelectCommand.Parameters.Add(param1)
         Adaptador.SelectCommand.Parameters.Add(param2)
@@ -557,6 +594,12 @@ Public Class ImprmirInforme
         Adaptador.SelectCommand.Parameters.Add(param48)
         Adaptador.SelectCommand.Parameters.Add(param49)
         Adaptador.SelectCommand.Parameters.Add(param50)
+        Adaptador.SelectCommand.Parameters.Add(param51)
+        Adaptador.SelectCommand.Parameters.Add(param52)
+        Adaptador.SelectCommand.Parameters.Add(param53)
+        Adaptador.SelectCommand.Parameters.Add(param54)
+        Adaptador.SelectCommand.Parameters.Add(param55)
+        Adaptador.SelectCommand.Parameters.Add(param56)
         Dim Data As New DataSet
         Adaptador.Fill(Data)
         Data.DataSetName = "Data1"
@@ -613,14 +656,20 @@ Public Class ImprmirInforme
         Dim p47 As New ReportParameter("OBSERSTA", obsersta)
         Dim p48 As New ReportParameter("ID", ID)
         Dim p49 As New ReportParameter("INTER", alcance)
-        Dim p50 As New ReportParameter("a", a)
+        Dim p50 As New ReportParameter("DETAJU", a)
+        Dim p51 As New ReportParameter("DETMAN", b)
+        Dim p52 As New ReportParameter("DETEVA", c)
+        Dim p53 As New ReportParameter("DETINT", d)
+        Dim p54 As New ReportParameter("DETCUR", f)
+        Dim p55 As New ReportParameter("DETIDI", g)
+        Dim p56 As New ReportParameter("DETCAL", h)
         Dim Reportes As New ReportDataSource("DataSet1", Data.Tables(0))
         FrmReportes.ReportViewer1.LocalReport.DataSources.Clear()
         FrmReportes.ReportViewer1.LocalReport.DataSources.Add(Datasource)
         FrmReportes.ReportViewer1.LocalReport.ReportPath = "C:\Users\Software TI\Documents\GitHub\ServiciosExcel\VinculacionDePestanas\Reportes\Report1.rdlc"
         FrmReportes.ReportViewer1.LocalReport.SetParameters(New ReportParameter() {p0, p1, p2, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17,
                                                             p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37, p38, p39,
-                                                            p40, p41, p42, p43, p44, p45, p46, p47, p48, p49, p50})
+                                                            p40, p41, p42, p43, p44, p45, p46, p47, p48, p49, p50, p51, p52, p53, p54, p55, p56})
         FrmReportes.ReportViewer1.RefreshReport()
         FrmReportes.Show()
         conexion2019.Close()
