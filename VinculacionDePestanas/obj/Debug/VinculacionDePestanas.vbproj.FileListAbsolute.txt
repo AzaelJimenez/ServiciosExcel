@@ -48,10 +48,6 @@ C:\Users\Software TI\Documents\GitHub\ServiciosExcel\VinculacionDePestanas\obj\D
 C:\Users\Software TI\Documents\GitHub\ServiciosExcel\VinculacionDePestanas\obj\Debug\VinculacionDePestanas.exe
 C:\Users\Software TI\Documents\GitHub\ServiciosExcel\VinculacionDePestanas\obj\Debug\VinculacionDePestanas.xml
 C:\Users\Software TI\Documents\GitHub\ServiciosExcel\VinculacionDePestanas\obj\Debug\VinculacionDePestanas.pdb
-C:\Users\Software TI\Documents\GitHub\ServiciosExcel\VinculacionDePestanas\bin\Debug\SqlServerTypes\x64\msvcr120.dll
-C:\Users\Software TI\Documents\GitHub\ServiciosExcel\VinculacionDePestanas\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
-C:\Users\Software TI\Documents\GitHub\ServiciosExcel\VinculacionDePestanas\bin\Debug\SqlServerTypes\x86\msvcr120.dll
-C:\Users\Software TI\Documents\GitHub\ServiciosExcel\VinculacionDePestanas\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 C:\Users\Software TI\Documents\GitHub\ServiciosExcel\VinculacionDePestanas\bin\Debug\VinculacionDePestanas.exe.config
 C:\Users\Software TI\Documents\GitHub\ServiciosExcel\VinculacionDePestanas\bin\Debug\VinculacionDePestanas.exe
 C:\Users\Software TI\Documents\GitHub\ServiciosExcel\VinculacionDePestanas\bin\Debug\VinculacionDePestanas.pdb

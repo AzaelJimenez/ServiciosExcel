@@ -238,6 +238,10 @@ Public Class Frmdoce
         Me.Dispose()
     End Sub
 
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        ImprmirInforme.ShowDialog()
+    End Sub
+
     Private Sub releaseObject(ByVal obj As Object)
         Try
             System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
