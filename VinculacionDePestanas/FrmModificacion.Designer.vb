@@ -24,6 +24,7 @@ Partial Class FrmModificacion
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmModificacion))
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -168,6 +169,7 @@ Partial Class FrmModificacion
         Me.txtModelo = New System.Windows.Forms.TextBox()
         Me.Label42 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -182,6 +184,7 @@ Partial Class FrmModificacion
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.LightGray
+        Me.Panel2.Controls.Add(Me.PictureBox4)
         Me.Panel2.Controls.Add(Me.Button2)
         Me.Panel2.Controls.Add(Me.Label26)
         Me.Panel2.Controls.Add(Me.PictureBox1)
@@ -194,6 +197,18 @@ Partial Class FrmModificacion
         Me.Panel2.Size = New System.Drawing.Size(986, 66)
         Me.Panel2.TabIndex = 154
         '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
+        Me.PictureBox4.Location = New System.Drawing.Point(702, 15)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(35, 33)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox4.TabIndex = 258
+        Me.PictureBox4.TabStop = False
+        '
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.Color.SteelBlue
@@ -201,7 +216,7 @@ Partial Class FrmModificacion
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(703, 17)
+        Me.Button2.Location = New System.Drawing.Point(743, 15)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(211, 33)
         Me.Button2.TabIndex = 166
@@ -245,7 +260,7 @@ Partial Class FrmModificacion
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(463, 15)
+        Me.Label14.Location = New System.Drawing.Point(247, 17)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(116, 15)
         Me.Label14.TabIndex = 226
@@ -256,7 +271,7 @@ Partial Class FrmModificacion
         '
         Me.txtInicioCalib.AutoSize = True
         Me.txtInicioCalib.Font = New System.Drawing.Font("Calibri Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtInicioCalib.Location = New System.Drawing.Point(463, 34)
+        Me.txtInicioCalib.Location = New System.Drawing.Point(247, 36)
         Me.txtInicioCalib.Name = "txtInicioCalib"
         Me.txtInicioCalib.Size = New System.Drawing.Size(157, 14)
         Me.txtInicioCalib.TabIndex = 252
@@ -265,7 +280,7 @@ Partial Class FrmModificacion
         '
         'DTPInicioCal
         '
-        Me.DTPInicioCal.Location = New System.Drawing.Point(461, 28)
+        Me.DTPInicioCal.Location = New System.Drawing.Point(245, 30)
         Me.DTPInicioCal.Name = "DTPInicioCal"
         Me.DTPInicioCal.Size = New System.Drawing.Size(235, 20)
         Me.DTPInicioCal.TabIndex = 251
@@ -1615,6 +1630,7 @@ Partial Class FrmModificacion
         Me.Text = "FrmModificacion"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
@@ -1780,4 +1796,5 @@ Partial Class FrmModificacion
     Friend WithEvents txtFunciones As TextBox
     Friend WithEvents txtModelo As TextBox
     Friend WithEvents Label42 As Label
+    Friend WithEvents PictureBox4 As PictureBox
 End Class
