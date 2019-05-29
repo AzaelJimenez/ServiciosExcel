@@ -309,7 +309,7 @@ Partial Public Class DataSet1
         
         Private columnSv9Calendar As Global.System.Data.DataColumn
         
-        Private columnSVAD10 As Global.System.Data.DataColumn
+        Private columnAccesorios As Global.System.Data.DataColumn
         
         Private columnPUNTOS As Global.System.Data.DataColumn
         
@@ -520,9 +520,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property SVAD10Column() As Global.System.Data.DataColumn
+        Public ReadOnly Property AccesoriosColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnSVAD10
+                Return Me.columnAccesorios
             End Get
         End Property
         
@@ -849,7 +849,7 @@ Partial Public Class DataSet1
                     ByVal Sv7Curva As Integer,  _
                     ByVal Sv8Idioma As Integer,  _
                     ByVal Sv9Calendar As Integer,  _
-                    ByVal SVAD10 As String,  _
+                    ByVal Accesorios As String,  _
                     ByVal PUNTOS As String,  _
                     ByVal Observaciones As String,  _
                     ByVal EmpresaEmision As String,  _
@@ -885,7 +885,7 @@ Partial Public Class DataSet1
                     ByVal ID As String,  _
                     ByVal ALCANCE As String) As InformeRow
             Dim rowInformeRow As InformeRow = CType(Me.NewRow,InformeRow)
-            Dim columnValuesArray() As Object = New Object() {Folio, TIPO, Empresa, ServCatalogo1, ClavecontactoConsign, _Clave_elaboro_cot, Sv1Ajuste, Sv3Matto, Sv5COM02, Sv6IntervaloRe, Sv7Curva, Sv8Idioma, Sv9Calendar, SVAD10, PUNTOS, Observaciones, EmpresaEmision, DirCalleEmision, DirCiudadEmision, DirEdoProvEmision, DirCPEmision, DirPaisEmision, Email, Tel, Usuario, FECHARECEP, Fecha_Reg, FECHACALIB, _FECHA_EMISION, FechaRecepLab, MARCA, MODELO, Serie, NumFuncionesCalibradas, Patron1, Patron2, Patron3, Patron4, Patron5, Patron6, Patron7, Patron8, Patron9, Patron10, Status, ObservacionStatus, ID, ALCANCE}
+            Dim columnValuesArray() As Object = New Object() {Folio, TIPO, Empresa, ServCatalogo1, ClavecontactoConsign, _Clave_elaboro_cot, Sv1Ajuste, Sv3Matto, Sv5COM02, Sv6IntervaloRe, Sv7Curva, Sv8Idioma, Sv9Calendar, Accesorios, PUNTOS, Observaciones, EmpresaEmision, DirCalleEmision, DirCiudadEmision, DirEdoProvEmision, DirCPEmision, DirPaisEmision, Email, Tel, Usuario, FECHARECEP, Fecha_Reg, FECHACALIB, _FECHA_EMISION, FechaRecepLab, MARCA, MODELO, Serie, NumFuncionesCalibradas, Patron1, Patron2, Patron3, Patron4, Patron5, Patron6, Patron7, Patron8, Patron9, Patron10, Status, ObservacionStatus, ID, ALCANCE}
             rowInformeRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowInformeRow)
             Return rowInformeRow
@@ -927,7 +927,7 @@ Partial Public Class DataSet1
             Me.columnSv7Curva = MyBase.Columns("Sv7Curva")
             Me.columnSv8Idioma = MyBase.Columns("Sv8Idioma")
             Me.columnSv9Calendar = MyBase.Columns("Sv9Calendar")
-            Me.columnSVAD10 = MyBase.Columns("SVAD10")
+            Me.columnAccesorios = MyBase.Columns("Accesorios")
             Me.columnPUNTOS = MyBase.Columns("PUNTOS")
             Me.columnObservaciones = MyBase.Columns("Observaciones")
             Me.columnEmpresaEmision = MyBase.Columns("EmpresaEmision")
@@ -995,8 +995,8 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnSv8Idioma)
             Me.columnSv9Calendar = New Global.System.Data.DataColumn("Sv9Calendar", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnSv9Calendar)
-            Me.columnSVAD10 = New Global.System.Data.DataColumn("SVAD10", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnSVAD10)
+            Me.columnAccesorios = New Global.System.Data.DataColumn("Accesorios", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAccesorios)
             Me.columnPUNTOS = New Global.System.Data.DataColumn("PUNTOS", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPUNTOS)
             Me.columnObservaciones = New Global.System.Data.DataColumn("Observaciones", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -1073,7 +1073,7 @@ Partial Public Class DataSet1
             Me.columnServCatalogo1.MaxLength = 50
             Me._columnClave_elaboro_cot.AllowDBNull = false
             Me._columnClave_elaboro_cot.Unique = true
-            Me.columnSVAD10.MaxLength = 50
+            Me.columnAccesorios.MaxLength = 255
             Me.columnPUNTOS.MaxLength = 255
             Me.columnObservaciones.MaxLength = 255
             Me.columnEmpresaEmision.MaxLength = 300
@@ -1439,16 +1439,16 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property SVAD10() As String
+        Public Property Accesorios() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableInforme.SVAD10Column),String)
+                    Return CType(Me(Me.tableInforme.AccesoriosColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'SVAD10' de la tabla 'Informe' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Accesorios' de la tabla 'Informe' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableInforme.SVAD10Column) = value
+                Me(Me.tableInforme.AccesoriosColumn) = value
             End Set
         End Property
         
@@ -2108,14 +2108,14 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsSVAD10Null() As Boolean
-            Return Me.IsNull(Me.tableInforme.SVAD10Column)
+        Public Function IsAccesoriosNull() As Boolean
+            Return Me.IsNull(Me.tableInforme.AccesoriosColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetSVAD10Null()
-            Me(Me.tableInforme.SVAD10Column) = Global.System.Convert.DBNull
+        Public Sub SetAccesoriosNull()
+            Me(Me.tableInforme.AccesoriosColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2706,7 +2706,7 @@ Namespace DataSet1TableAdapters
             tableMapping.ColumnMappings.Add("Sv7Curva", "Sv7Curva")
             tableMapping.ColumnMappings.Add("Sv8Idioma", "Sv8Idioma")
             tableMapping.ColumnMappings.Add("Sv9Calendar", "Sv9Calendar")
-            tableMapping.ColumnMappings.Add("SVAD10", "SVAD10")
+            tableMapping.ColumnMappings.Add("Accesorios", "Accesorios")
             tableMapping.ColumnMappings.Add("PUNTOS", "PUNTOS")
             tableMapping.ColumnMappings.Add("Observaciones", "Observaciones")
             tableMapping.ColumnMappings.Add("EmpresaEmision", "EmpresaEmision")
@@ -2817,6 +2817,7 @@ Namespace DataSet1TableAdapters
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DETCUR", Global.System.Data.SqlDbType.VarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DETIDI", Global.System.Data.SqlDbType.VarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DETCAL", Global.System.Data.SqlDbType.VarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NUM", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2881,7 +2882,8 @@ Namespace DataSet1TableAdapters
                     ByVal DETINT As String,  _
                     ByVal DETCUR As String,  _
                     ByVal DETIDI As String,  _
-                    ByVal DETCAL As String) As Integer
+                    ByVal DETCAL As String,  _
+                    ByVal NUM As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (FOLIO Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
@@ -3167,6 +3169,11 @@ Namespace DataSet1TableAdapters
                 Me.Adapter.SelectCommand.Parameters(57).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(57).Value = CType(DETCAL,String)
+            End If
+            If (NUM.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(58).Value = CType(NUM.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(58).Value = Global.System.DBNull.Value
             End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -3236,7 +3243,8 @@ Namespace DataSet1TableAdapters
                     ByVal DETINT As String,  _
                     ByVal DETCUR As String,  _
                     ByVal DETIDI As String,  _
-                    ByVal DETCAL As String) As DataSet1.InformeDataTable
+                    ByVal DETCAL As String,  _
+                    ByVal NUM As Global.System.Nullable(Of Integer)) As DataSet1.InformeDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (FOLIO Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
@@ -3522,6 +3530,11 @@ Namespace DataSet1TableAdapters
                 Me.Adapter.SelectCommand.Parameters(57).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(57).Value = CType(DETCAL,String)
+            End If
+            If (NUM.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(58).Value = CType(NUM.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(58).Value = Global.System.DBNull.Value
             End If
             Dim dataTable As DataSet1.InformeDataTable = New DataSet1.InformeDataTable()
             Me.Adapter.Fill(dataTable)

@@ -10,7 +10,7 @@ Public Class ImprmirInforme
         comando2019 = conexion2019.CreateCommand
         Dim R As String
         R = "SELECT Folio,TIPO,Empresa, ServCatalogo1, ClavecontactoConsign,[Claves-Elaboro-Cot].[Clave-elaboro-cot],Sv1Ajuste,Sv3Matto,
-            Sv5COM02,Sv6IntervaloRe,Sv7Curva,Sv8Idioma,Sv9Calendar,SVAD10,PUNTOS, Observaciones,EmpresaEmision, DirCalleEmision,
+            Sv5COM02,Sv6IntervaloRe,Sv7Curva,Sv8Idioma,Sv9Calendar,Accesorios, PUNTOS, Observaciones,EmpresaEmision, DirCalleEmision,
             DirCiudadEmision, DirEdoProvEmision,DirCPEmision, DirPaisEmision,[Contactos-Clientes-Usuarios].Email,
             [Contactos-Clientes-Usuarios].Tel,[INFORMES-SERVICIOS].Usuario,FECHARECEP,[Fecha_Reg],[FECHACALIB],[FECHA-EMISION],[FechaRecepLab],
             MARCA,MODELO,Serie,NumFuncionesCalibradas,[Patron1],[Patron2],[Patron3],[Patron4],[Patron5],[Patron6],[Patron7],[Patron8],[Patron9],
@@ -27,6 +27,7 @@ Public Class ImprmirInforme
         Dim tipo, emp, serv, elaboroCot, ajuste, mantto, com, inter, curva, idioma, calen, vad, pun, obser,
          empemi, dir, cd, edo, cp, pais, email, user, marca, modelo, serie, nfun,
         pa1, pa2, pa3, pa4, pa5, pa6, pa7, pa8, pa9, pa10, status, obsersta, tel, ID, alcance As String
+        Dim NUM As Integer = 12
         Dim a As String = " "
         Dim b As String = " "
         Dim c As String = " "
@@ -429,6 +430,7 @@ Public Class ImprmirInforme
         Dim param54 = New SqlParameter("@DETCUR", SqlDbType.VarChar)
         Dim param55 = New SqlParameter("@DETIDI", SqlDbType.VarChar)
         Dim param56 = New SqlParameter("@DETCAL", SqlDbType.VarChar)
+        Dim param57 = New SqlParameter("@NUM", SqlDbType.VarChar)
         param0.Direction = ParameterDirection.Input
         param1.Direction = ParameterDirection.Input
         param2.Direction = ParameterDirection.Input
@@ -486,6 +488,7 @@ Public Class ImprmirInforme
         param54.Direction = ParameterDirection.Input
         param55.Direction = ParameterDirection.Input
         param56.Direction = ParameterDirection.Input
+        param57.Direction = ParameterDirection.Input
         param0.Value = fol
         param1.Value = MAG
         param2.Value = INF
@@ -543,6 +546,7 @@ Public Class ImprmirInforme
         param54.Value = f
         param55.Value = g
         param56.Value = h
+        param57.Value = NUM
         Adaptador.SelectCommand.Parameters.Add(param0)
         Adaptador.SelectCommand.Parameters.Add(param1)
         Adaptador.SelectCommand.Parameters.Add(param2)
@@ -600,6 +604,7 @@ Public Class ImprmirInforme
         Adaptador.SelectCommand.Parameters.Add(param54)
         Adaptador.SelectCommand.Parameters.Add(param55)
         Adaptador.SelectCommand.Parameters.Add(param56)
+        'Adaptador.SelectCommand.Parameters.Add(param57)
         Dim Data As New DataSet
         Adaptador.Fill(Data)
         Data.DataSetName = "Data1"
@@ -663,13 +668,14 @@ Public Class ImprmirInforme
         Dim p54 As New ReportParameter("DETCUR", f)
         Dim p55 As New ReportParameter("DETIDI", g)
         Dim p56 As New ReportParameter("DETCAL", h)
+        Dim p57 As New ReportParameter("NUM", NUM)
         Dim Reportes As New ReportDataSource("DataSet1", Data.Tables(0))
         FrmReportes.ReportViewer1.LocalReport.DataSources.Clear()
         FrmReportes.ReportViewer1.LocalReport.DataSources.Add(Datasource)
         FrmReportes.ReportViewer1.LocalReport.ReportPath = "C:\Users\Software TI\Documents\GitHub\ServiciosExcel\VinculacionDePestanas\Reportes\Report1.rdlc"
         FrmReportes.ReportViewer1.LocalReport.SetParameters(New ReportParameter() {p0, p1, p2, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17,
                                                             p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37, p38, p39,
-                                                            p40, p41, p42, p43, p44, p45, p46, p47, p48, p49, p50, p51, p52, p53, p54, p55, p56})
+                                                            p40, p41, p42, p43, p44, p45, p46, p47, p48, p49, p50, p51, p52, p53, p54, p55, p56, p57})
         FrmReportes.ReportViewer1.RefreshReport()
         FrmReportes.Show()
         conexion2019.Close()

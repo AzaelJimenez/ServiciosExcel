@@ -168,6 +168,10 @@ Partial Class FrmModificacion
         Me.txtFunciones = New System.Windows.Forms.TextBox()
         Me.txtModelo = New System.Windows.Forms.TextBox()
         Me.Label42 = New System.Windows.Forms.Label()
+        Me.txtNum = New System.Windows.Forms.TextBox()
+        Me.Label70 = New System.Windows.Forms.Label()
+        Me.rbGestores = New System.Windows.Forms.RadioButton()
+        Me.rbLab = New System.Windows.Forms.RadioButton()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1109,7 +1113,7 @@ Partial Class FrmModificacion
         '
         Me.txtIntervaloDeCal.Location = New System.Drawing.Point(140, 338)
         Me.txtIntervaloDeCal.Name = "txtIntervaloDeCal"
-        Me.txtIntervaloDeCal.Size = New System.Drawing.Size(770, 20)
+        Me.txtIntervaloDeCal.Size = New System.Drawing.Size(650, 20)
         Me.txtIntervaloDeCal.TabIndex = 254
         '
         'txtEvaluacion
@@ -1490,12 +1494,57 @@ Partial Class FrmModificacion
         Me.Label42.TabIndex = 226
         Me.Label42.Text = "Operador:"
         '
+        'txtNum
+        '
+        Me.txtNum.Location = New System.Drawing.Point(796, 338)
+        Me.txtNum.Name = "txtNum"
+        Me.txtNum.Size = New System.Drawing.Size(66, 20)
+        Me.txtNum.TabIndex = 259
+        '
+        'Label70
+        '
+        Me.Label70.AutoSize = True
+        Me.Label70.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label70.Location = New System.Drawing.Point(868, 340)
+        Me.Label70.Name = "Label70"
+        Me.Label70.Size = New System.Drawing.Size(42, 15)
+        Me.Label70.TabIndex = 260
+        Me.Label70.Text = "Meses"
+        '
+        'rbGestores
+        '
+        Me.rbGestores.AutoSize = True
+        Me.rbGestores.Checked = True
+        Me.rbGestores.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbGestores.Location = New System.Drawing.Point(689, 226)
+        Me.rbGestores.Name = "rbGestores"
+        Me.rbGestores.Size = New System.Drawing.Size(75, 17)
+        Me.rbGestores.TabIndex = 262
+        Me.rbGestores.TabStop = True
+        Me.rbGestores.Text = "Gestores"
+        Me.rbGestores.UseVisualStyleBackColor = True
+        '
+        'rbLab
+        '
+        Me.rbLab.AutoSize = True
+        Me.rbLab.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbLab.Location = New System.Drawing.Point(770, 226)
+        Me.rbLab.Name = "rbLab"
+        Me.rbLab.Size = New System.Drawing.Size(95, 17)
+        Me.rbLab.TabIndex = 263
+        Me.rbLab.Text = "Laboratorios"
+        Me.rbLab.UseVisualStyleBackColor = True
+        '
         'FrmModificacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(999, 515)
+        Me.Controls.Add(Me.rbLab)
+        Me.Controls.Add(Me.rbGestores)
+        Me.Controls.Add(Me.Label70)
+        Me.Controls.Add(Me.txtNum)
         Me.Controls.Add(Me.Panel9)
         Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Panel7)
@@ -1797,4 +1846,8 @@ Partial Class FrmModificacion
     Friend WithEvents txtModelo As TextBox
     Friend WithEvents Label42 As Label
     Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents txtNum As TextBox
+    Friend WithEvents Label70 As Label
+    Friend WithEvents rbGestores As RadioButton
+    Friend WithEvents rbLab As RadioButton
 End Class

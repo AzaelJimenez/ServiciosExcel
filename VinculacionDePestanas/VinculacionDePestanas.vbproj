@@ -168,6 +168,7 @@
     <EmbeddedResource Include="Reportes\ImprmirInforme.resx">
       <DependentUpon>ImprmirInforme.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Report2.rdlc" />
     <EmbeddedResource Include="Reportes\Report1.rdlc" />
   </ItemGroup>
   <ItemGroup>
