@@ -64,6 +64,17 @@ Namespace My
                 Return CType(Me("METASINF_2019_3ConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SERVER3\COMPAC2;Initial Catalog=METASINF-2019;User ID=sa;Password=Met"& _ 
+            "99011578a")>  _
+        Public ReadOnly Property METASINF_2019ConnectionString() As String
+            Get
+                Return CType(Me("METASINF_2019ConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

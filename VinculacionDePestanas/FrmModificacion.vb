@@ -427,8 +427,8 @@ Public Class FrmModificacion
     End Sub
 
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
-        Try
-            If txtMagnitud.Text.Equals("") Or txtInforme.Text.Equals("") Then
+        'Try
+        If txtMagnitud.Text.Equals("") Or txtInforme.Text.Equals("") Then
                 MsgBox("Ingresa el servicio para procesar tu reporte.", MsgBoxStyle.Information)
             Else
                 Dim INF, MAG As String
@@ -1102,8 +1102,8 @@ Public Class FrmModificacion
                 FrmReportes.Show()
                 conexion2019.Close()
             End If
-        Catch ex As Exception
-            MsgBox("Error al procesar el reporte, intenta nuevamente.", MsgBoxStyle.Exclamation)
-        End Try
+        ' Catch ex As Exception
+        'MsgBox("Error al procesar el reporte, intenta nuevamente.", MsgBoxStyle.Exclamation)
+        'End Try
     End Sub
 End Class
